@@ -1,0 +1,26 @@
+<%-include("../partials/navbar")%>
+<%-include("../partials/header")%>
+    <h1>Welcome to the shopping Cart</h1>
+   <div class="container">
+    <%-include("../partials/flash")%>
+
+
+   <div class="row product">
+    <%for (let item of products){%>
+      <div class="col-lg-3">
+          <div class="card text-center" style="width: 18rem;">
+         <img src="<%=item.img%>" class="card-img-top" alt="...">
+         <div class="card-body">
+           <h5 class="card-title"><%=item.name%></h5>
+           <p class="card-text">	&#8377 <%=item.price%></p>
+           <p class="card-text"><%=item.desc.substring(0,70)%>..</p>
+           
+           <a href="/products/<%=item._id%>" class="btn btn-outline-primary">More Info</a>
+         </div>
+       </div>
+      </div>
+ 
+     <%}%>
+   </div>
+   </div>
+    <%-include("../partials/footer")%>
